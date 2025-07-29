@@ -1,0 +1,118 @@
+\documentclass{book}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+
+% enable text wrapping in tables
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+% see above
+\usepackage{url}
+\usepackage{hyperref}
+%\def\UrlBreaks{\do\/\do-}
+
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+
+\pagestyle{fancy}
+\fancyhf{}  % clear existing headers/footers
+\fancyhead[L]{\nouppercase{\leftmark}}  % section/chapter title on top-left
+\fancyfoot[C]{\thepage}  % page number in center
+
+% Enable section titles to appear in header (for \section*)
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+
+% END PREAMBLE
+
+\title{Daily Productivity Report}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{App Usage Summary}
+\begin{center}
+\includegraphics[width=0.7\textwidth]{app_usage_pie.png}
+\end{center}
+
+\section*{Application Focus Time}
+\begin{longtable}{@{}L{0.3\textwidth}L{0.4\textwidth}@{}}
+\toprule
+\textbf{Application} & \textbf{Time Spent} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Application} & \textbf{Time Spent} \\
+\midrule
+\endhead
+% rows will be inserted here from focus data
+\end{longtable}
+
+\section*{Total Time Spent Per Domain}
+\begin{longtable}{@{}L{0.6\textwidth}L{0.3\textwidth}@{}}
+\toprule
+\textbf{Domain} & \textbf{Time Spent (sec)} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Domain} & \textbf{Time Spent (sec)} \\
+\midrule
+\endhead
+% rows will be inserted here from domain focus data
+\end{longtable}
+
+\section*{Domain Visit Count}
+\begin{center}
+\includegraphics[width=0.85\textwidth]{domain_visit_count_bar.png}
+\end{center}
+
+\begin{longtable}{@{}L{0.15\textwidth}L{0.75\textwidth}@{}}
+\toprule
+\textbf{Visits} & \textbf{Domain} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Visits} & \textbf{Domain} \\
+\midrule
+\endhead
+% rows will be inserted here from domain visit count
+\end{longtable}
+
+\section*{Time Spent Per Page}
+\begin{longtable}{@{}L{0.65\textwidth}L{0.3\textwidth}@{}}
+\toprule
+\textbf{URL} & \textbf{Time Spent} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{URL} & \textbf{Time Spent} \\
+\midrule
+\endhead
+% rows will be inserted here from webpage focus data
+\end{longtable}
+
+\section*{Page History}
+{
+	\small
+	\begin{longtable}{@{}L{0.3\textwidth}L{0.4\textwidth}L{0.25\textwidth}@{}}
+	\toprule
+	\textbf{URL} & \textbf{Title} & \textbf{Visited At} \\
+	\midrule
+	\endfirsthead
+	\toprule
+	\textbf{URL} & \textbf{Title} & \textbf{Visited At} \\
+	\midrule
+	\endhead
+	% rows will be inserted here from web activity
+	\end{longtable}
+}
+
+\pagebreak
+
+\section*{Thoughts and Reflections For the Day}
+% insert notes here
+
+\end{document}
