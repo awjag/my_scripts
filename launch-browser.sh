@@ -1,0 +1,1 @@
+qutebrowser "$1"
